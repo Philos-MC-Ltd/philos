@@ -13,3 +13,52 @@
  *= require_tree .
  *= require_self
  */
+
+ .no-decoration{
+   text-decoration: none;
+   color: inherit;
+ }
+.navbar{
+  background-color: #0077B6;
+}
+
+.w-100{
+  width: 100%;
+}
+.h-25{
+    min-height: 25vh;
+    max-height: 25vh;
+}
+.h-50{
+    min-height: 50vh;
+    max-height: 50vh;
+}
+.h-75{
+    min-height: 75vh;
+    max-height: 75vh;
+}
+.h-100{
+    min-height: 100vh;
+    max-height: 100vh;
+}
+.h-full{
+  height: 100%;
+}
+.bg-repair{
+  background-image: url('pc repair.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.bg-software{
+  background-image: url('software.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.bg-support{
+  background-image: url('support.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}

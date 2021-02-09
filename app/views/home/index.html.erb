@@ -1,2 +1,112 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="container">
+  <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"></li>
+      <li data-bs-target="#carouselExampleDark" data-bs-slide-to="1"></li>
+      <li data-bs-target="#carouselExampleDark" data-bs-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner h-75">
+      <div class="carousel-item active h-75 bg-repair py-5 px-5 align-middle" data-bs-interval="10000" >
+          <div class="row g-0">
+            <div class="col-sm-6 col-md-8 py-5">
+              <h1>Work with a team of Experts in technology</h1>
+              <h3>Take a look at our open positions</h3>
+              <button class="btn btn-info text-white my-4" name="button">View Jobs</button>
+            </div>
+            <div class="col-6 col-md-4 py-5">
+              <%= image_tag('philos logo.png', class:"w-100") %>
+            </div>
+          </div>
+      </div>
+      <div class="carousel-item h-75 bg-software" data-bs-interval="2000">
+        <div class="text-center h-75 align-middle py-5">
+          <h1 class="text-light my-5">We have experts in software development</h1>
+        </div>
+      </div>
+      <div class="carousel-item h-75 bg-support">
+        <div class="text-center h-75 align-middle py-5 px-5">
+          <h1 class="my-5">If you have an institution, We help your employees to be familiar with Technology materials day by day</h1>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleDark" role="button" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleDark" role="button" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </a>
+  </div>
+  <!-- this link should be displayed by a picture -->
+  <a href="#" class="no-decoration">
+    <div class="mx-5 py-4 px-5 text-center">
+      <h1 class="">APPLY FOR INTERNSHIP</h1>
+    </div>
+  </a>
+
+  <main>
+    <div class="row row-content">
+        <div class="col-12 col-sm-9 ">
+          <div class="row">
+            <div class="col-sm-5 ">
+              <span>Anouncements</span>
+              <hr>
+              <div class="position-relative p-3 bg-gray" style="height: 180px">
+                <div class="ribbon-wrapper ribbon-lg">
+                  <div class="ribbon bg-warning">
+                    we are hiring!
+                  </div>
+                </div>
+               <h4 class="text-danger">Are you the one we need?</h4>  <br>
+                <small>We are hiring professional intern in Electronics, are you the one we need <a href="apply.html">Apply now </a><span class="text-danger">Deadline 25<sup>th</sup> Nov 2020</span></small>
+              </div>
+              <p class="text-danger d-none ml-5">No recent available</p>
+            </div>
+            <!-- <div class="col-sm-7">
+              <span class="float-right ">I need help with</span>
+              <hr class="bg-primary mt-4">
+              <div class="row">
+                <div class="col">
+                  <ul>
+                    <li>Laptops repair and maintenance;</li>
+                    <li>Desktops repair and maintenance;</li>
+                    <li>Printers repair and maintenance;</li>
+                    <li>Scanners repair and maintenance;</li>
+                    <li>Photocopying Machines repair and maintenance;</li>
+                    <li>Access door and finger prints repair and maintenance;</li>
+                  </ul>
+                </div>
+                <div class="col">
+                  <ul>
+                    <li>Servers repair and maintenance;</li>
+                    <li>Air Condition repair and maintenance;</li>
+                    <li>Office telephone and PBX repair and maintenance;</li>
+                    <li>Storage Work repair and maintenance;</li>
+                    <li>We provide also Codification of assets</li>
+                  </ul>
+                </div>
+              </div>
+            </div> -->
+            <div class="col-sm-12">
+
+              <p><em>PHILOS MC Ltd</em> started in 2017, with a mission of providing high quality and
+                innovated IT Repair and maintenance services to another level of professionalism
+                in Rwanda. Because of the high quality services in demand the Company intends
+                to expand from Rwanda to East Africa community with various clients.</p>
+            </div>
+
+          </div>
+        </div>
+          <div class="col-12 col-sm-3">
+             <div class="card mt-1 border-primary">
+                <h5 class="card-header text-center navbar-dark  text-white">Mainly Working Site</h5>
+                <div class="card-body">
+                  <iframe id="gmap_canvas" class="img-fluid" src="https://maps.google.com/maps?q=university%20teaching%20hospital%20of%20kigali&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                 </div>
+              </div>
+    </div>
+
+  </div>
+  </main>
+</div>
