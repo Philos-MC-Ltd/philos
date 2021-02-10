@@ -40,73 +40,138 @@
   </div>
   <!-- this link should be displayed by a picture -->
   <a href="#" class="no-decoration">
-    <div class="mx-5 py-4 px-5 text-center">
-      <h1 class="">APPLY FOR INTERNSHIP</h1>
+    <div class="py-4 text-center">
+      <%= image_tag('internship.png', class:"animated-img w-1/2") %>
     </div>
   </a>
 
-  <main>
-    <div class="row row-content">
-        <div class="col-12 col-sm-9 ">
-          <div class="row">
-            <div class="col-sm-5 ">
-              <span>Anouncements</span>
-              <hr>
-              <div class="position-relative p-3 bg-gray" style="height: 180px">
-                <div class="ribbon-wrapper ribbon-lg">
-                  <div class="ribbon bg-warning">
-                    we are hiring!
-                  </div>
-                </div>
-               <h4 class="text-danger">Are you the one we need?</h4>  <br>
-                <small>We are hiring professional intern in Electronics, are you the one we need <a href="apply.html">Apply now </a><span class="text-danger">Deadline 25<sup>th</sup> Nov 2020</span></small>
-              </div>
-              <p class="text-danger d-none ml-5">No recent available</p>
+  <main class="bg-light py-4">
+    <div class="row g-0">
+      <div class="col-sm-6 col-md-8 px-2">
+        <h2 class="text-main-color">Anouncements</h2>
+        <hr>
+        <div class="position-relative p-3 bg-gray">
+          <div class="my-3">
+            <!-- title of the announcement -->
+            <h4 class="mb-0">Software developer job</h4>
+            <small class="text-secondary">Feb 10 2021</small>
+            <!-- body of the announcement -->
+            <p class="my-2">Philos Mc Ltd needs a software developer with skills in java ...</p>
+          </div>
+          <div class="my-3">
+            <!-- title of the announcement -->
+            <h4 class="mb-0">Software developer job</h4>
+            <small class="text-secondary">Feb 10 2021</small>
+            <!-- body of the announcement -->
+            <p class="my-2">Philos Mc Ltd needs a software developer with skills in java ...</p>
+          </div>
+          <div class="my-3">
+            <!-- title of the announcement -->
+            <h4 class="mb-0">Software developer job</h4>
+            <small class="text-secondary">Feb 10 2021</small>
+            <!-- body of the announcement -->
+            <p class="my-2">Philos Mc Ltd needs a software developer with skills in java ...</p>
+          </div>
+          <a href="#" class="no-decoration text-main-color">View all</a>
+        </div>
+        <p class="text-danger d-none ml-5">No recent available</p>
+      </div>
+      <div class="col-sm-6 col-md-4 px-2">
+        <div class="card mt-1 border-main-color shadow-sm rounded-3 overflow-hidden">
+          <div class="text-white bg-main-color text-center py-2">
+            <h5>Mainly Working Site</h5>
+          </div>
+           <div class="card-body p-1">
+             <iframe id="gmap_canvas" class="img-fluid w-100" src="https://maps.google.com/maps?q=university%20teaching%20hospital%20of%20kigali&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
             </div>
-            <!-- <div class="col-sm-7">
-              <span class="float-right ">I need help with</span>
-              <hr class="bg-primary mt-4">
-              <div class="row">
-                <div class="col">
-                  <ul>
-                    <li>Laptops repair and maintenance;</li>
-                    <li>Desktops repair and maintenance;</li>
-                    <li>Printers repair and maintenance;</li>
-                    <li>Scanners repair and maintenance;</li>
-                    <li>Photocopying Machines repair and maintenance;</li>
-                    <li>Access door and finger prints repair and maintenance;</li>
-                  </ul>
-                </div>
-                <div class="col">
-                  <ul>
-                    <li>Servers repair and maintenance;</li>
-                    <li>Air Condition repair and maintenance;</li>
-                    <li>Office telephone and PBX repair and maintenance;</li>
-                    <li>Storage Work repair and maintenance;</li>
-                    <li>We provide also Codification of assets</li>
-                  </ul>
-                </div>
-              </div>
-            </div> -->
-            <div class="col-sm-12">
-
-              <p><em>PHILOS MC Ltd</em> started in 2017, with a mission of providing high quality and
-                innovated IT Repair and maintenance services to another level of professionalism
-                in Rwanda. Because of the high quality services in demand the Company intends
-                to expand from Rwanda to East Africa community with various clients.</p>
-            </div>
-
+         </div>
+      </div>
+    </div>
+    <!-- our services section -->
+    <section id="services" class="px-4">
+      <div class="">
+        <h1 class="text-main-color text-center space-1">What we do</h1>
+        <div class="row g-0 mt-4">
+          <div class="col-sm-6 col-md-4 px-2">
+            <%= image_tag('pc repair.jpg', class:"w-100") %>
+          </div>
+          <div class="col-sm-6 col-md-8 px-2">
+            <h4>Computer Reparation</h4>
+            <p>We repair Desktop computers, laptop computers and their peripherals</p>
           </div>
         </div>
-          <div class="col-12 col-sm-3">
-             <div class="card mt-1 border-primary">
-                <h5 class="card-header text-center navbar-dark  text-white">Mainly Working Site</h5>
-                <div class="card-body">
-                  <iframe id="gmap_canvas" class="img-fluid" src="https://maps.google.com/maps?q=university%20teaching%20hospital%20of%20kigali&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-                 </div>
-              </div>
-    </div>
+        <div class="row g-0 mt-4">
+          <div class="col-sm-6 col-md-4 px-2">
+            <%= image_tag('pc repair.jpg', class:"w-100") %>
+          </div>
+          <div class="col-sm-6 col-md-8 px-2">
+            <h4>Computer Reparation</h4>
+            <p>We repair Desktop computers, laptop computers and their peripherals</p>
+          </div>
+        </div>
+        <div class="row g-0 mt-4">
+          <div class="col-sm-6 col-md-4 px-2">
+            <%= image_tag('pc repair.jpg', class:"w-100") %>
+          </div>
+          <div class="col-sm-6 col-md-8 px-2">
+            <h4>Computer Reparation</h4>
+            <p>We repair Desktop computers, laptop computers and their peripherals</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- about us section -->
+    <section id="about" class="my-5 px-4">
+      <div class="text-center">
+        <h2 class="text-main-color space-1">ABOUT US</h2>
+        <p><em>PHILOS MC Ltd</em> started in 2017, with a mission of providing high quality and
+          innovated IT Repair and maintenance services to another level of professionalism
+          in Rwanda. Because of the high quality services in demand the Company intends
+          to expand from Rwanda to East Africa community with various clients.</p>
+      </div>
+    </section>
 
-  </div>
+    <!-- team section -->
+    <section id="team" class="px-4">
+      <h2 class="text-main-color space-1 text-center">TEAM</h2>
+      <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center" >
+        <div class="col">
+          <div class="card">
+            <%= image_tag('user.png', class:"w-100") %>
+            <div class="card-body text-center">
+              <h5 class="card-title">User name</h5>
+              <i>Position</i>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <%= image_tag('user.png', class:"w-100") %>
+            <div class="card-body text-center">
+              <h5 class="card-title">User name</h5>
+              <i>Position</i>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <%= image_tag('user.png', class:"w-100") %>
+            <div class="card-body text-center">
+              <h5 class="card-title">User name</h5>
+              <i>Position</i>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <%= image_tag('user.png', class:"w-100") %>
+            <div class="card-body text-center">
+              <h5 class="card-title">User name</h5>
+              <i>Position</i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 </div>
