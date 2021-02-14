@@ -1,0 +1,47 @@
+<div class="py-10 h-100 bg-light">
+  <div class="container">
+    <div class="row px-2">
+      <div class="col-md-4 col-sm-12 mx-auto py-2 bg-white rounded shadow">
+        <div class="w-100 px-5 mb-4">
+          <%= image_tag('philos logo.png', class:"w-100") %>
+        </div>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="mb-3">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email Address", class:"form-control" %>
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+          <%= f.password_field :password, autocomplete: "current-password", placeholder:"Password", class:"form-control" %>
+        </div>
+        <div class="mb-3 form-check">
+          <% if devise_mapping.rememberable? %>
+            <div class="field d-flex justify-content-between">
+              <small class="field">
+                <%= f.check_box :remember_me, class:"form-check-input" %>
+                <%= f.label :remember_me, class:"form-check-label cursor-pointer" %>
+              </small>
+              <small class="field">
+                <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+                  <%= link_to "Forgot your password?", new_password_path(resource_name), class:"no-decoration text-main-color" %><br />
+                <% end %>
+              </small>
+            </div>
+          <% end %>
+        </div>
+        <%= f.submit "Log in", class:"btn btn-info form-control rounded-pill text-white" %>
+      <% end %>
+      <div class="d-flex mt-4">
+        <small>If you don't have account,
+          <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+            <%= link_to "Sign up", new_registration_path(resource_name), class:"no-decoration text-main-color" %><br />
+          <% end %>
+        </small>
+      </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+</div>
