@@ -1,10 +1,11 @@
 <div class="py-10 h-100 bg-light">
-  <div class="container">
-    <div class="row px-2">
-      <div class="col-md-4 col-sm-12 mx-auto py-2 bg-white rounded shadow">
-        <div class="w-100 px-5 mb-4">
-          <%= image_tag('philos logo.png', class:"w-100") %>
-        </div>
+  <div class="container col-md-9">
+    <div class="row px-2 bg-white  rounded shadow  mx-auto">
+      <div class="col-md-5 py-5 mx-auto">
+        <%= image_tag('philos logo', class:"w-100") %>
+      </div>
+      <div class="col-md-4 col-sm-12 mx-auto py-4">
+
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="mb-3">
           <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email Address", class:"form-control" %>
@@ -31,9 +32,9 @@
         <%= f.submit "Log in", class:"btn btn-info form-control rounded-pill text-white" %>
       <% end %>
       <div class="d-flex mt-4">
-        <small>If you don't have account,
+        <small class="text-center ">If you don't have account,
           <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-            <%= link_to "Sign up", new_registration_path(resource_name), class:"no-decoration text-main-color" %><br />
+            <%= link_to "Sign up", new_registration_path(resource_name), class:"no-decoration text-main-color text-center" %><br />
           <% end %>
         </small>
       </div>

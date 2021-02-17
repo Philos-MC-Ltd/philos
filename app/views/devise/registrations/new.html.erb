@@ -1,62 +1,49 @@
-<div class="bg-light h-100">
-  <div class="container">
-    <div class="row py-10">
-      <div class="col">
+<div class="bg-light h-100 overflow-auto">
+  <div class="container py-5">
+    <div class="row rounded-3 py-4 bg-white shadow-sm">
+      <div class="col-md-5 py-5 mx-auto">
         <%= image_tag('philos logo', class:"w-100") %>
       </div>
-      <div class="col-md-7 col-sm-12 mx-auto">
+      <div class="col-md-5 col-sm-12 mx-auto">
 
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= render "devise/shared/error_messages", resource: resource %>
-          <div class="row">
-            <div class="col">
+          <div class="row mb-4">
+            <div class="col-md col-sm">
               <div class="field">
-                <%= f.label :first_name %><br />
-                <%= f.text_field :first_name, class:"form-control" %>
+                <%= f.text_field :first_name, class:"form-control", placeholder:"First name" %>
               </div>
             </div>
-            <div class="col">
+            <div class="col-md col-sm">
               <div class="field">
-                <%= f.label :first_name %><br />
-                <%= f.text_field :first_name, class:"form-control" %>
+                <%= f.text_field :last_name, class:"form-control", placeholder:"Last name" %>
               </div>
             </div>
           </div>
-          <div class="field">
-            <%= f.label :phone %><br />
-            <%= f.text_field :phone, class:"form-control" %>
+          <div class="field mb-4">
+            <%= f.text_field :phone, class:"form-control", placeholder:"", placeholder:"Phone number" %>
           </div>
-          <div class="field">
-            <%= f.label :ID_number %><br />
-            <%= f.text_field :ID_number, class:"form-control" %>
+          <div class="field mb-4">
+            <%= f.text_field :ID_number, class:"form-control", placeholder:"ID number" %>
           </div>
-          <div class="field">
-            <%= f.label :email %><br />
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
+          <div class="field mb-4">
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder:"Email Address" %>
           </div>
           <div class="row">
-            <div class="col">
+            <div class="col-md col-sm">
               <div class="field">
-                <%= f.label :password %>
-                <% if @minimum_password_length %>
-                <em>(<%= @minimum_password_length %> characters minimum)</em>
-                <% end %><br />
-                <%= f.password_field :password, autocomplete: "new-password", class:"form-control" %>
+                <%= f.password_field :password, autocomplete: "new-password", class:"form-control", placeholder:"Password" %>
               </div>
             </div>
-            <div class="col">
+            <div class="col-md col-sm">
               <div class="field">
-                <%= f.label :password_confirmation %><br />
-                <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control" %>
+                <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control", placeholder:"Password confirmation" %>
               </div>
             </div>
           </div>
-
-
-
 
           <div class="actions pt-4 px-5">
-            <%= f.submit "Sign up", class:"form-control bg-main-color rounded-pill" %>
+            <%= f.submit "Sign up", class:"form-control btn-info text-white rounded-pill" %>
           </div>
         <% end %>
         <div class="text-center py-2">
@@ -67,8 +54,6 @@
             <% end %>
           </small>
         </div>
-
-
       </div>
     </div>
   </div>

@@ -21,9 +21,26 @@
       </ul>
 
       <% if user_signed_in? %>
-        <%= link_to  destroy_user_session_path, method: :delete do %>
-          <label class='text-decoration-none text-light cursor-pointer'>Sign out</label>
-        <% end %>
+      <div class="dropdown">
+        <a class=" text-white" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+            <%= current_user.email %>
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+
+          <li>
+            <%= link_to  destroy_user_session_path, method: :delete do %>
+              <label class='dropdown-item text-decoration-none  cursor-pointer'>Sign out</label>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to edit_user_registration_path do %>
+              <label class='dropdown-item text-decoration-none  cursor-pointer'>Edit profile</label>
+            <% end %>
+          </li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+      </div>
+
       <% else %>
         <%= link_to  new_user_session_path do %>
           <label class='text-decoration-none text-light cursor-pointer'>Sign in</label>
