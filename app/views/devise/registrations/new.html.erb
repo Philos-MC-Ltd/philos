@@ -20,6 +20,10 @@
               </div>
             </div>
           </div>
+          <div class="field">
+            <%= f.radio_button :gender, 'male' %> Male 
+            <%= f.radio_button :gender, 'female' %> Female<br />
+          </div>
           <div class="field mb-4">
             <%= f.text_field :phone, class:"form-control", placeholder:"", placeholder:"Phone number" %>
           </div>

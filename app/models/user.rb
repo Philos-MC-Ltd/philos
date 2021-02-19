@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   enum gender: [ :male, :female]
+  mount_uploader :picture, PictureUploader
 end

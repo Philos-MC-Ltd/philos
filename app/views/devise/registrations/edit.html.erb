@@ -1,8 +1,8 @@
 <%= render "components/navbar" %>
 <div class="bg-light overflow-auto">
   <div class="container bg-white shadow px-4 py-5">
-    <h2>Edit <%= resource_name.to_s.humanize %></h2>
-
+    <h2 class="space-1">Edit Your Profile Information</h2>
+    <hr>
     <%= render "devise/shared/error_messages", resource: resource %>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <div class="row border-bottom py-4 ">
@@ -10,11 +10,25 @@
         <h4>Personal details</h4>
       </div>
       <div class="col">
+        <div class="row mb-4">
+          <div class="col">
+            <%= image_tag current_user.picture.url, class: "profile rounded-circle" %>
+          </div>
+          <div class="col-md-9">
+            <%= f.label :picture, "Change profile picture" %><br>
+            <%= f.file_field :picture %>
+          </div>
+        </div>
+
         <div class="field col-md-6 mb-4">
           <%= f.text_field :first_name, class:"form-control", placeholder:"First name" %>
         </div>
         <div class="field col-md-6 mb-4">
           <%= f.text_field :last_name, class:"form-control", placeholder:"Last name" %>
+        </div>
+        <div class="field col-md-6 mb-4">
+          <%= f.radio_button :gender, 'male' %> Male
+          <%= f.radio_button :gender, 'female' %> Female<br />
         </div>
         <div class="field col-md-6 mb-4">
           <%= f.text_field :ID_number, class:"form-control", placeholder:"ID number" %>

@@ -22,8 +22,13 @@
 
       <% if user_signed_in? %>
       <div class="dropdown">
-        <a class=" text-white" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-            <%= current_user.email %>
+        <a class=" text-white text-decoration-none" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+          <% if current_user.picture.present? %>
+            <%= image_tag current_user.picture.url, class:"nav-profile rounded-circle" %>
+          <% else %>
+            <%= image_tag ("avatar.png") %>
+          <% end %>
+             <%= current_user.first_name %>
         </a>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 
