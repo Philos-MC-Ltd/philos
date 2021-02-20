@@ -12,7 +12,12 @@
       <div class="col">
         <div class="row mb-4">
           <div class="col">
-            <%= image_tag current_user.picture.url, class: "profile rounded-circle" %>
+            <% if current_user.picture.present? %>
+              <%= image_tag current_user.picture.url, class:"profile rounded-circle" %>
+            <% else %>
+              <%= image_tag('avatar.png', class:"nav-profile rounded-circle") %>
+            <% end %>
+
           </div>
           <div class="col-md-9">
             <%= f.label :picture, "Change profile picture" %><br>
