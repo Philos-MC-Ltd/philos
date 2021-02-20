@@ -15,7 +15,7 @@
             <% if current_user.picture.present? %>
               <%= image_tag current_user.picture.url, class:"profile rounded-circle" %>
             <% else %>
-              <%= image_tag('avatar.png', class:"nav-profile rounded-circle") %>
+              <%= image_tag('avatar.png', class:"profile rounded-circle") %>
             <% end %>
 
           </div>
