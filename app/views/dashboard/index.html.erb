@@ -11,45 +11,74 @@
       <span class="hamb-middle"></span>
       <span class="hamb-bottom"></span>
     </button>
-    <div class="container">
-      <div class="py-4 border-bottom">
+    <div class="container bg-light shadow">
+      <div class="py-4 border-bottom border-secondary row">
+        <div class="col">
+          <%= image_tag('philos logo.png', class:"logo-dash") %>
+        </div>
         <% if user_signed_in? %>
-        <h3><%= current_user.first_name %> <%= current_user.last_name %> Dashboard</h3>
-        <% end %>
+        <div class="col">
+          <h3 class="text-end"><%= current_user.first_name %> <%= current_user.last_name %></h3>
+          <h3 class="text-secondary text-end">Dashboard</h3>
+          <% end %>
+        </div>
+      </div>
+      <div class="row row-cols-1 row-cols-md-3 g-4 py-4">
+        <div class="col">
+          <div class="card">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Personal report</h5>
+
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Services</h5>
+
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Job offers</h5>
+
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Announcements</h5>
+
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Preventive maintenance</h5>
+
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Curative maintenance</h5>
+
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
-    <!-- /#wrapper -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script type="text/javascript">
-  $(document).ready(function () {
-    var trigger = $('.hamburger'),
-        overlay = $('.overlay'),
-        isClosed = false;
-
-        trigger.click(function () {
-          hamburger_cross();
-        });
-
-    function hamburger_cross() {
-
-      if (isClosed == true) {
-        overlay.hide();
-        trigger.removeClass('is-open');
-        trigger.addClass('is-closed');
-        isClosed = false;
-      } else {
-        overlay.show();
-        trigger.removeClass('is-closed');
-        trigger.addClass('is-open');
-        isClosed = true;
-      }
-    }
-
-    $('[data-toggle="offcanvas"]').click(function () {
-          $('#wrapper').toggleClass('toggled');
-    });
-  });
-
-</script>

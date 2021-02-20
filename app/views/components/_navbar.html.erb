@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-main-color text-light position-fixed w-100 z-index-1">
+<nav class="navbar navbar-expand-lg navbar-dark bg-main-color text-light">
   <div class="container-fluid container">
     <a class="navbar-brand" href="#">Philos MC Ltd</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,7 +26,7 @@
 
       <% if user_signed_in? %>
       <div class="dropdown">
-        <a class=" text-white text-decoration-none" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+        <a class="text-white text-decoration-none" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
           <% if current_user.picture.present? %>
             <%= image_tag current_user.picture.url, class:"nav-profile rounded-circle" %>
           <% else %>
