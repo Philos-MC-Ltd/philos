@@ -26,9 +26,9 @@
           <% if current_user.picture.present? %>
             <%= image_tag current_user.picture.url, class:"nav-profile rounded-circle" %>
           <% else %>
-            <%= image_tag ("avatar.png", class:"nav-profile rounded-circle") %>
+            <%= image_tag('avatar.png', class:"nav-profile rounded-circle") %>
           <% end %>
-             <%= current_user.first_name %>
+          <%= current_user.first_name %>
         </a>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 
