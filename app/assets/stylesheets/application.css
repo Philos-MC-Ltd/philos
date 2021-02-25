@@ -13,6 +13,16 @@
  *= require_tree .
  *= require_self
  */
+ .h-screen{
+   min-height: 100vh;
+ }
+ .announcement{
+   height: 50px;
+   display: -webkit-box;
+   -webkit-line-clamp: 3;
+   -webkit-box-orient: vertical;
+   overflow: hidden;
+ }
 .z-index-1{
   z-index: 1;
 }
