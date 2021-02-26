@@ -1,34 +1,40 @@
-<%= render "components/navbar" %>
 <div id="wrapper">
   <div class="overlay"></div>
   <!-- Sidebar -->
   <%= render "components/sidebar" %>
   <div class="" id="page-content-wrapper">
+    <div class="position-fixed w-100">
+      <%= render "components/navbar" %>
+    </div>
     <button type="button" class="hamburger animated fadeInLeft is-closed" data-toggle="offcanvas">
       <span class="hamb-top"></span>
       <span class="hamb-middle"></span>
       <span class="hamb-bottom"></span>
     </button>
-    <div class="container border bg-light h-screen overflow-auto p-0 ">
-
-      <div class="bg-white py-4 border-bottom px-4">
+    <div class="container border bg-light h-screen overflow-auto px-0 pt-5 ">
+      <div class="bg-white pt-5 pb-3 border-bottom px-4">
         <h1>All anouncements</h1>
         <%= link_to 'Add a new Announcement', new_announcement_path, class:"text-decoration-none text-main-color  " %>
       </div>
-      <p id="notice"><%= notice %></p>
+      <% if notice %>
+        <p id="notice" class="alert alert-info" role="alert"><%= notice %></p>
+      <% end %>
       <div class="px-4">
         <% @announcements.each do |announcement| %>
-        <div class="">
-          <h3><%= announcement.title %></h3>
+        <div class="mb-4">
+          <div class="">
+            <h3><%= announcement.title %></h3>
+          </div>
+          <div class="">
+            <p><%= announcement.content %></p>
+              <%= link_to 'Show', announcement, class:"text-decoration-none" %>
+              <%= link_to 'Edit', edit_announcement_path(announcement), class:"text-decoration-none text-success" %>
+              <%= link_to 'Destroy', announcement, method: :delete, data: { confirm: 'Are you sure?' }, class:"text-decoration-none text-danger" %>
+          
+          </div>
+
         </div>
-        <div class="">
-          <p><%= announcement.content %></p>
-        </div>
-        <div class="">
-          <%= link_to 'Show', announcement, class:"text-decoration-none" %>
-          <%= link_to 'Edit', edit_announcement_path(announcement), class:"text-decoration-none text-success" %>
-          <%= link_to 'Destroy', announcement, method: :delete, data: { confirm: 'Are you sure?' }, class:"text-decoration-none text-danger" %>
-        </div>
+
 
         <% end %>
       </div>

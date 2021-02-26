@@ -49,34 +49,27 @@
   <main class="bg-light py-4">
     <div class="row g-0">
       <div class="col-sm-6 col-md-8 px-2">
-        <h2 class="text-main-color">Anouncements</h2>
+        <%= link_to "Announcements", announcements_path, class:"text-main-color text-decoration-none fs-1" %>
+
         <hr>
         <div class="position-relative p-3 bg-gray">
+          <% @announcements.each do |announcement| %>
           <div class="my-3">
             <!-- title of the announcement -->
-            <h4 class="mb-0">Software developer job</h4>
-            <small class="text-secondary">Feb 10 2021</small>
+            <h4 class="mb-0 fw-light">
+              <%= announcement.title %>
+            </h4>
+            <small class="text-secondary">
+              <%= announcement.updated_at %>
+            </small>
             <!-- body of the announcement -->
-            <p class="my-2 h-3 announcement">Philos Mc Ltd needs a software developer with skills in java Philos Mc Ltd needs a software developer with skills in java Philos Mc Ltd needs a software developer with skills in java Philos Mc Ltd needs a software developer with skills in java Philos Mc Ltd needs a software developer with skills in java Philos Mc Ltd needs a software developer with skills in java Philos Mc Ltd needs a software developer with skills in java Philos Mc Ltd needs a software developer with skills in java Philos Mc Ltd needs a software developer with skills in java </p>
-            <small class="text-main-color">Read full text</small>
+            <p class="my-2 h-3 announcement fw-lighter">
+              <%= announcement.content %>
+            </p>
+            <%= link_to 'Read full text', announcement, class:"text-decoration-none text-main-color" %>
           </div>
-          <div class="my-3">
-            <!-- title of the announcement -->
-            <h4 class="mb-0">Software developer job</h4>
-            <small class="text-secondary">Feb 10 2021</small>
-            <!-- body of the announcement -->
-            <p class="my-2">Philos Mc Ltd needs a software developer with skills in java ...</p>
-          </div>
-          <div class="my-3">
-            <!-- title of the announcement -->
-            <h4 class="mb-0">Software developer job</h4>
-            <small class="text-secondary">Feb 10 2021</small>
-            <!-- body of the announcement -->
-            <p class="my-2">Philos Mc Ltd needs a software developer with skills in java ...</p>
-          </div>
-          <a href="#" class="no-decoration text-main-color">View all</a>
+          <% end %>
         </div>
-        <p class="text-danger d-none ml-5">No recent available</p>
       </div>
       <div class="col-sm-6 col-md-4 px-2">
         <div class="card mt-1 border-main-color shadow-sm rounded-3 overflow-hidden">
