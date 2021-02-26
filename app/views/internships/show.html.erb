@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @internship.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @internship.last_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @internship.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @internship.phone %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @internship.gender %>
+</p>
+
+<p>
+  <strong>College:</strong>
+  <%= @internship.college %>
+</p>
+
+<p>
+  <strong>Graduation year:</strong>
+  <%= @internship.graduation_year %>
+</p>
+
+<p>
+  <strong>Curricurum Vitae:</strong>
+  <%= link_to "CV", @internship.cv %>
+</p>
+
+<%= link_to 'Edit', edit_internship_path(@internship) %> |
+<%= link_to 'Back', internships_path %>
