@@ -1,6 +1,6 @@
 class InternshipsController < ApplicationController
   before_action :set_internship, only: %i[ show edit update destroy ]
-
+  before_action :authenticate_user!, except: [:confirm]
   # GET /internships or /internships.json
   def index
     @internships = Internship.all
@@ -14,6 +14,10 @@ class InternshipsController < ApplicationController
   def new
     @internship = Internship.new
   end
+  #Get /internships/confirm
+  def confirm
+
+  end
 
   # GET /internships/1/edit
   def edit
@@ -23,15 +27,15 @@ class InternshipsController < ApplicationController
   def create
     @internship = Internship.new(internship_params)
 
-    respond_to do |format|
+
       if @internship.save
-        format.html { redirect_to @internship, notice: "Internship was successfully created." }
-        format.json { render :show, status: :created, location: @internship }
+        redirect_to internship_confirm_path(@internship)
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @internship.errors, status: :unprocessable_entity }
+        respond_to do |format|
+          format.html { render :new, status: :unprocessable_entity }
+          format.json { render json: @internship.errors, status: :unprocessable_entity }
+        end
       end
-    end
   end
 
   # PATCH/PUT /internships/1 or /internships/1.json
@@ -39,7 +43,7 @@ class InternshipsController < ApplicationController
     respond_to do |format|
       if @internship.update(internship_params)
         format.html { redirect_to @internship, notice: "Internship was successfully updated." }
-        format.json { render :show, status: :ok, location: @internship }
+        format.json { render :confirm, status: :ok, location: @internship }
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @internship.errors, status: :unprocessable_entity }
@@ -64,6 +68,6 @@ class InternshipsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def internship_params
-      params.require(:internship).permit(:first_name, :last_name, :email, :phone, :gender, :college, :graduation_year, :cv)
+      params.require(:internship).permit(:position, :first_name, :last_name, :email, :phone, :gender, :college, :graduation_year, :cv)
     end
 end

@@ -1,5 +1,13 @@
-<h1>New Internship</h1>
+<div class="position-fixed w-100">
+  <%= render "components/navbar" %>
+</div>
 
-<%= render 'form', internship: @internship %>
-
-<%= link_to 'Back', internships_path %>
+<div class="container pt-4">
+  <div class="col-md-7 mx-auto py-5 bg-light px-4">
+    <h1 class="fw-light text-main-color text-center">Apply for Internship</h1>
+    <small class="text-secondary fw-light my-3">You are a fresh graduate from college or university with skills in information technology or electronics. Please feel free to fill the form below with your collect information</small>
+    <div class="mt-5">
+      <%= render 'form', internship: @internship %>
+    </div>
+  </div>
+</div>

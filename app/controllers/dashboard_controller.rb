@@ -1,6 +1,7 @@
 class DashboardController < ApplicationController
   before_action :change_on_login
   def index
+    @internships = Internship.all
   end
   def change_on_login
     unless user_signed_in?

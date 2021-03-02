@@ -17,11 +17,11 @@
           <%= image_tag('philos logo.png', class:"logo-dash") %>
         </div>
         <% if user_signed_in? %>
-        <div class="col">
-          <h3 class="text-end"><%= current_user.first_name %> <%= current_user.last_name %></h3>
-          <h3 class="text-secondary text-end">Dashboard</h3>
-          <% end %>
-        </div>
+          <div class="col">
+            <h3 class="text-end"><%= current_user.first_name %> <%= current_user.last_name %></h3>
+            <h3 class="text-secondary text-end">Dashboard</h3>
+          </div>
+        <% end %>
       </div>
       <div class="row row-cols-1 row-cols-md-3 g-4 py-4">
         <div class="col">
@@ -32,8 +32,6 @@
 
             </div>
           </div>
-        </div>
-        <div class="col">
           <div class="card">
             <img src="..." class="card-img-top" alt="...">
             <div class="card-body">
@@ -41,13 +39,16 @@
 
             </div>
           </div>
-        </div>
-        <div class="col">
           <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Job offers</h5>
+            <div class="p-3">
+              <%= link_to internships_path do %>
+              <%= image_tag('job.png', class:"card-img-top") %>
+              <% end %>
+            </div>
 
+            <div class="card-body">
+              <h5 class="card-title">Internship applications</h5>
+              <label>Number of applications: <%= @internships.count %></label>
             </div>
           </div>
         </div>
@@ -59,8 +60,6 @@
 
             </div>
           </div>
-        </div>
-        <div class="col">
           <div class="card">
             <img src="..." class="card-img-top" alt="...">
             <div class="card-body">
@@ -78,8 +77,6 @@
                   <h5 class="card-title">Curative maintenance</h5>
             </div>
           </div>
-        </div>
-        <div class="col">
           <div class="card">
             <img src="..." class="card-img-top" alt="...">
             <div class="card-body">
@@ -88,6 +85,7 @@
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </div>

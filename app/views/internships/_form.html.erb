@@ -11,47 +11,59 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
+  <div class="form-group mb-4">
+    <%= form.label :position, "Which position You want to apply for" %><span class="text-danger fw-normal"> * </span>
+    <%= form.select :first_name, ['Hardware technician', 'Software Developer'], class:"form-control w-100"  %>
+  </div>
+  <div class="form-group mb-4">
+    <%= form.label :first_name %><span class="text-danger fw-normal"> * </span>
+    <%= form.text_field :first_name, class:"form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
+  <div class="form-group mb-4">
+    <%= form.label :last_name %><span class="text-danger fw-normal"> * </span>
+    <%= form.text_field :last_name , class:"form-control"%>
   </div>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
+  <div class="form-group mb-4">
+    <%= form.label :email %><span class="text-danger fw-normal"> * </span>
+    <%= form.text_field :email, class:"form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_field :phone %>
+  <div class="form-group mb-4">
+    <%= form.label :phone %><span class="text-danger fw-normal"> * </span>
+    <%= form.text_field :phone, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group mb-4">
+    <label>Gender <span class="text-danger fw-normal"> * </span></label>
     <%= form.radio_button :gender, 'male' %> Male
     <%= form.radio_button :gender, 'female' %> Female<br />
   </div>
 
-  <div class="field">
-    <%= form.label :college %>
-    <%= form.text_field :college %>
+  <div class="form-group mb-4">
+    <%= form.label :college %><span class="text-danger fw-normal"> * </span>
+    <%= form.select :college, ['Not listed',
+                               'University of Rwanda',
+                               'Rwanda Polytechnic',
+                               'University of Kigali',
+                               'Universite Libre De Kigali',
+                               'Unilak',
+                               'Mount kenya University',
+                               'AUKA'] %>
   </div>
 
-  <div class="field">
+  <div class="form-group mb-4">
     <%= form.label :graduation_year %>
-    <%= form.text_field :graduation_year %>
+    <%= form.text_field :graduation_year, class:"form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :cv %>
+  <div class="form-group mb-4">
+    <%= form.label :cv %><span class="text-danger fw-normal"> * </span>
     <%= form.file_field :cv %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions my-3">
+    <%= form.submit "Apply", class:"bg-main-color text-white py-1 px-4 border-0 rounded space-1" %>
   </div>
 <% end %>

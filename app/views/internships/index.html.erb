@@ -1,41 +1,54 @@
-<p id="notice"><%= notice %></p>
+<div class="w-100 px-4">
+  <p id="notice"><%= notice %></p>
+  <div class="row">
+    <div class="col">
+      <%= image_tag('philos logo.png', class:"logo-dash") %>
+    </div>
+    <div class="col text-end">
+      <h1>All Internships Applications</h1>
+    </div>
+  </div>
 
-<h1>Internships</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Email</th>
-      <th>Phone</th>
-      <th>Gender</th>
-      <th>College</th>
-      <th>Graduation year</th>
-      <th>Cv</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @internships.each do |internship| %>
+  <table class="table table-striped table-hover">
+    <thead class="bg-main-color text-white">
       <tr>
-        <td><%= internship.first_name %></td>
-        <td><%= internship.last_name %></td>
-        <td><%= internship.email %></td>
-        <td><%= internship.phone %></td>
-        <td><%= internship.gender %></td>
-        <td><%= internship.college %></td>
-        <td><%= internship.graduation_year %></td>
-        <td><%= link_to "Curricurum vitae", internship.cv %></td>
-        <td><%= link_to 'Show', internship %></td>
-        <td><%= link_to 'Edit', edit_internship_path(internship) %></td>
-        <td><%= link_to 'Destroy', internship, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th class="text-center border-end ">First name</th>
+        <th class="text-center border-end ">Last name</th>
+        <th class="text-center border-end ">Email</th>
+        <th class="text-center border-end ">Phone</th>
+        <th class="text-center border-end ">Gender</th>
+        <th class="text-center border-end ">College</th>
+        <th class="text-center border-end ">Graduation year</th>
+        <th class="text-center border-end ">CVs</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @internships.each do |internship| %>
+        <tr>
+          <%= link_to internship do %>
+          <td class="text-center border-end "><%= internship.first_name %></td>
+          <% end %>
+          <td class="text-center border-end "><%= internship.last_name %></td>
+          <td class="text-center border-end "><%= internship.email %></td>
+          <td class="text-center border-end "><%= internship.phone %></td>
+          <td class="text-center border-end "><%= internship.gender %></td>
+          <td class="text-center border-end "><%= internship.college %></td>
+          <td class="text-center border-end "><%= internship.graduation_year %></td>
 
-<%= link_to 'New Internship', new_internship_path %>
+          <td class="text-center border-end "><%= link_to "Curricurum vitae", internship.cv %></td>
+
+          <td><%= link_to 'Edit', edit_internship_path(internship) %></td>
+          <td><%= link_to 'Destroy', internship, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'New Internship', new_internship_path %>
+
+</div>
