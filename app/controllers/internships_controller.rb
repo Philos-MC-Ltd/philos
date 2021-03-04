@@ -26,8 +26,6 @@ class InternshipsController < ApplicationController
   # POST /internships or /internships.json
   def create
     @internship = Internship.new(internship_params)
-
-
       if @internship.save
         redirect_to internship_confirm_path(@internship)
       else
@@ -40,15 +38,13 @@ class InternshipsController < ApplicationController
 
   # PATCH/PUT /internships/1 or /internships/1.json
   def update
-    respond_to do |format|
-      if @internship.update(internship_params)
-        format.html { redirect_to @internship, notice: "Internship was successfully updated." }
-        format.json { render :confirm, status: :ok, location: @internship }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @internship.errors, status: :unprocessable_entity }
-      end
+    if params[:status]
+      @internship.update(status: params[:status])
+      redirect_to internships_path
+    elsif @internship.update(internship_params)
+      redirect_to internships_path
     end
+
   end
 
   # DELETE /internships/1 or /internships/1.json
@@ -68,6 +64,6 @@ class InternshipsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def internship_params
-      params.require(:internship).permit(:position, :first_name, :last_name, :email, :phone, :gender, :college, :graduation_year, :cv)
+      params.require(:internship).permit(:status, :position, :first_name, :last_name, :email, :phone, :gender, :college, :graduation_year, :cv)
     end
 end

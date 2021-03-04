@@ -1,54 +1,74 @@
-<div class="w-100 px-4">
-  <p id="notice"><%= notice %></p>
-  <div class="row">
-    <div class="col">
-      <%= image_tag('philos logo.png', class:"logo-dash") %>
+<div id="wrapper">
+  <div class="overlay"></div>
+  <%= render "components/sidebar" %>
+  <div class="" id="page-content-wrapper">
+    <div class="position-fixed w-100">
+      <%= render "components/navbar" %>
     </div>
-    <div class="col text-end">
-      <h1>All Internships Applications</h1>
-    </div>
+    <button type="button" class="hamburger animated fadeInLeft is-closed" data-toggle="offcanvas">
+      <span class="hamb-top"></span>
+      <span class="hamb-middle"></span>
+      <span class="hamb-bottom"></span>
+    </button>
   </div>
+  <div class="container border bg-light h-screen overflow-auto px-0 pt-5 ">
+    <p id="notice"><%= notice %></p>
+    <div class="row">
+      <div class="col">
+        <%= image_tag('philos logo.png', class:"logo-dash") %>
+      </div>
+      <div class="col text-end">
+        <h1>All Internships Applications</h1>
+      </div>
+    </div>
 
 
-  <table class="table table-striped table-hover">
-    <thead class="bg-main-color text-white">
-      <tr>
-        <th class="text-center border-end ">First name</th>
-        <th class="text-center border-end ">Last name</th>
-        <th class="text-center border-end ">Email</th>
-        <th class="text-center border-end ">Phone</th>
-        <th class="text-center border-end ">Gender</th>
-        <th class="text-center border-end ">College</th>
-        <th class="text-center border-end ">Graduation year</th>
-        <th class="text-center border-end ">CVs</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @internships.each do |internship| %>
+    <table class="table table-striped table-hover">
+      <thead class="bg-main-color text-white">
         <tr>
-          <%= link_to internship do %>
-          <td class="text-center border-end "><%= internship.first_name %></td>
-          <% end %>
-          <td class="text-center border-end "><%= internship.last_name %></td>
-          <td class="text-center border-end "><%= internship.email %></td>
-          <td class="text-center border-end "><%= internship.phone %></td>
-          <td class="text-center border-end "><%= internship.gender %></td>
-          <td class="text-center border-end "><%= internship.college %></td>
-          <td class="text-center border-end "><%= internship.graduation_year %></td>
-
-          <td class="text-center border-end "><%= link_to "Curricurum vitae", internship.cv %></td>
-
-          <td><%= link_to 'Edit', edit_internship_path(internship) %></td>
-          <td><%= link_to 'Destroy', internship, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <th class="text-center border-end ">Names</th>
+          <th class="text-center border-end ">Email</th>
+          <th class="text-center border-end ">Phone</th>
+          <th class="text-center border-end ">Gender</th>
+          <th class="text-center border-end ">College</th>
+          <th class="text-center border-end ">Graduation year</th>
+          <th class="text-center border-end ">CVs</th>
+          <th colspan="3"></th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
 
-  <br>
+      <tbody>
+        <% @internships.each do |internship| %>
+          <tr>
+            <td class="text-center border-end ">
+              <%= link_to internship do %>
+              <label class="text-decoration-none cursor-pointer"> <%= internship.first_name %>  <%= internship.last_name %></label>
+              <% end %>
+            </td>
+            <td class="text-center border-end "><%= internship.email %></td>
+            <td class="text-center border-end "><%= internship.phone %></td>
+            <td class="text-center border-end "><%= internship.gender %></td>
+            <td class="text-center border-end "><%= internship.college %></td>
+            <td class="text-center border-end "><%= internship.graduation_year %></td>
 
-  <%= link_to 'New Internship', new_internship_path %>
+            <td class="text-center border-end "><%= link_to "Curricurum vitae", internship.cv %></td>
+            <td>
+              <% if internship.status == false %>
+                  <%= link_to "Read", internship_path(internship, :status => true),method: :patch,class: 'btn btn-sm btn-success' %>
+              <% else %>
+                <%= link_to "Unread", internship_path(internship, :status => false),method: :patch,class: 'btn btn-sm btn-warning' %>
+              <% end %>
+            </td>
+
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+    <%= link_to 'New Internship', new_internship_path %>
+
+  </div>
 
 </div>

@@ -39,6 +39,10 @@
   <strong>Curricurum Vitae:</strong>
   <%= link_to "CV", @internship.cv %>
 </p>
+<p>
+  <strong>Status:</strong>
+  <%= @internship.status %>
+</p>
 
 <%= link_to 'Edit', edit_internship_path(@internship) %> |
 <%= link_to 'Back', internships_path %>
