@@ -1,0 +1,31 @@
+<div id="wrapper">
+  <div class="overlay"></div>
+  <%= render "components/sidebar" %>
+  <div id="page-content-wrapper">
+    <div class="position-fixed w-100 z-index-1">
+      <%= render "components/navbar" %>
+    </div>
+    <button type="button" class="hamburger animated fadeInLeft is-closed" data-toggle="offcanvas">
+      <span class="hamb-top"></span>
+      <span class="hamb-middle"></span>
+      <span class="hamb-bottom"></span>
+    </button>
+    <div class="container pt-5 bg-light h-screen">
+      <div class="py-4 pt-4 border-bottom border-secondary row">
+        <div class="col">
+          <%= image_tag('philos logo.png', class:"logo-dash") %>
+        </div>
+          <div class="col text-end">
+            <h1>New Weekly Report</h1>
+          </div>
+      </div>
+      <div class="col-md-10 mx-auto py-4">
+        <%= render 'form', weekly_report: @weekly_report %>
+      </div>
+
+
+      <%= link_to 'Back', weekly_reports_path %>
+
+    </div>
+  </div>
+</div>

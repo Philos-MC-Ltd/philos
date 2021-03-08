@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   enum gender: [ :male, :female]
   mount_uploader :picture, PictureUploader
+  has_many :weekly_reports, dependent: :destroy
 end

@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  from: 2021-03-05 09:50:48
+  to: 2021-03-05 09:50:48
+  action: MyText
+
+two:
+  from: 2021-03-05 09:50:48
+  to: 2021-03-05 09:50:48
+  action: MyText

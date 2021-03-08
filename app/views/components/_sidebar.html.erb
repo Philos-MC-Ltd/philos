@@ -10,7 +10,11 @@
         <label>Home</label>
       <% end %>
     </li>
-    <li><a href="#about">Personal report</a></li>
+    <li>
+      <%= link_to weekly_reports_path do %>
+        <label>Weekly report</label>
+      <% end %>
+    </li>
     <li>
       <%= link_to announcements_path do %>
         <label>Announcements</label>

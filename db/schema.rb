@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_02_133400) do
+ActiveRecord::Schema.define(version: 2021_03_05_100107) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,16 @@ ActiveRecord::Schema.define(version: 2021_03_02_133400) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "activities", force: :cascade do |t|
+    t.time "from"
+    t.time "to"
+    t.text "action"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "weekly_report_id", null: false
+    t.index ["weekly_report_id"], name: "index_activities_on_weekly_report_id"
   end
 
   create_table "announcements", force: :cascade do |t|
@@ -75,5 +85,17 @@ ActiveRecord::Schema.define(version: 2021_03_02_133400) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "weekly_reports", force: :cascade do |t|
+    t.date "done_at"
+    t.text "lesson"
+    t.text "challenge"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_weekly_reports_on_user_id"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "activities", "weekly_reports"
+  add_foreign_key "weekly_reports", "users"
 end

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :weekly_reports
   resources :internships do
     get "confirm"
   end

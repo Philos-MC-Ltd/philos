@@ -3,7 +3,8 @@ class InternshipsController < ApplicationController
   before_action :authenticate_user!, except: [:confirm]
   # GET /internships or /internships.json
   def index
-    @internships = Internship.all
+    @read_internships = Internship.where(status: true)
+    @unread_internships = Internship.where(status: false)
   end
 
   # GET /internships/1 or /internships/1.json

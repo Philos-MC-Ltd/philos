@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Done at:</strong>
+  <%= @weekly_report.done_at %>
+</p>
+
+<p>
+  <strong>Lesson:</strong>
+  <%= @weekly_report.lesson %>
+</p>
+
+<p>
+  <strong>Challenge:</strong>
+  <%= @weekly_report.challenge %>
+</p>
+
+<%= link_to 'Edit', edit_weekly_report_path(@weekly_report) %> |
+<%= link_to 'Back', weekly_reports_path %>

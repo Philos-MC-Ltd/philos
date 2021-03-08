@@ -16,6 +16,9 @@
  h1, h2, h3, h4, h5{
    font-weight: lighter;
  }
+ .bg-green-light{
+   background-color: #d5ded9;
+ }
  .h-screen{
    min-height: 100vh;
  }
