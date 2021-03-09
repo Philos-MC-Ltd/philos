@@ -1,0 +1,52 @@
+<div id="wrapper">
+  <div class="overlay"></div>
+  <%= render "components/sidebar" %>
+  <div id="page-content-wrapper">
+    <div class="position-fixed w-100 z-index-1">
+      <%= render "components/navbar" %>
+    </div>
+    <button type="button" class="hamburger animated fadeInLeft is-closed" data-toggle="offcanvas">
+      <span class="hamb-top"></span>
+      <span class="hamb-middle"></span>
+      <span class="hamb-bottom"></span>
+    </button>
+    <div class="container pt-5 bg-light h-screen">
+      <p id="notice"><%= notice %></p>
+      <div class="row mb-4">
+        <div class="col">
+          <%= image_tag('philos logo.png', class:"logo-dash") %>
+        </div>
+        <div class="col text-end">
+          <h1>Employees</h1>
+        </div>
+      </div>
+      <div class="col-md-8 mx-auto">
+        <div class="col-md-4 mx-auto mb-4">
+          <input type="search" name="" value="" class="form-control rounded-pill text-center" placeholder="Search employee ">
+        </div>
+        <% @users.each do |employee| %>
+          <div class="row rounded-3 shadow-sm border p-3 mb-4 bg-white">
+            <div class="col-md-3">
+              <% if employee.picture.present? %>
+                <%= image_tag employee.picture.url, class:"profile rounded-circle" %>
+              <% else %>
+                <%= image_tag('avatar.png', class:"profile rounded-circle") %>
+              <% end %>
+            </div>
+            <div class="col">
+              <%= link_to employee do %>
+               <h4 class="text-decoration-none text-main-color"><%= employee.first_name %> <%= employee.last_name %></h4>
+              <% end %>
+              <label class="text-secondary">Position</label><br>
+              <strong>Supports given this month: </strong><br>
+              <strong>Permissions: </strong><br>
+              <strong></strong><br>
+            </div>
+          </div>
+
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>

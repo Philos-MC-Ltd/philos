@@ -51,7 +51,7 @@
                 </td>
             <% end %>
             <td class=""><%= weekly_report.lesson %></td>
-            <td class=""><%= weekly_report.challenge %></td>
+            <td class=""><%= weekly_report.user.first_name %></td>
             <td><%= link_to 'Show', weekly_report %></td>
             <td><%= link_to 'Edit', edit_weekly_report_path(weekly_report) %></td>
             <td><%= link_to 'Destroy', weekly_report, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -63,6 +63,7 @@
     <br>
 
     <%= link_to 'New Weekly Report', new_weekly_report_path %>
+    
   </div>
 </div>
 </div>

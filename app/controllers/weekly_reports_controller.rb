@@ -10,6 +10,7 @@ class WeeklyReportsController < ApplicationController
   def show
   end
 
+
   # GET /weekly_reports/new
   def new
     @weekly_report = WeeklyReport.new
