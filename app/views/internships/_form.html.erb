@@ -1,6 +1,6 @@
 <%= form_with(model: internship, local: true) do |form| %>
   <% if internship.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" class="alert alert-danger">
       <h2><%= pluralize(internship.errors.count, "error") %> prohibited this internship from being saved:</h2>
 
       <ul>
@@ -55,12 +55,19 @@
 
   <div class="form-group mb-4">
     <%= form.label :graduation_year %>
-    <%= form.text_field :graduation_year, class:"form-control" %>
+    <%= form.select :graduation_year,['2020',
+                                      '2019',
+                                      '2018',
+                                      '2017'], class:"form-control" %>
   </div>
 
   <div class="form-group mb-4">
     <%= form.label :cv %><span class="text-danger fw-normal"> * </span>
     <%= form.file_field :cv %>
+  </div>
+  <div class="form-group mb-4">
+    <%= form.label :id_card %><span class="text-danger fw-normal"> * </span>
+    <%= form.file_field :id_card %>
   </div>
 
   <div class="actions my-3">
