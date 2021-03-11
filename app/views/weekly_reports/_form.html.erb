@@ -1,6 +1,6 @@
 <%= form_with(model: weekly_report, local: true) do |form| %>
   <% if weekly_report.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" class="alert alert-danger">
       <h2><%= pluralize(weekly_report.errors.count, "error") %> prohibited this weekly_report from being saved:</h2>
 
       <ul>
@@ -23,7 +23,15 @@
       <%= form.fields_for :activities do |ff| %>
         <div class="row mb-4">
           <div class="col-md-4 text-end">
-            <label>Start time</label>
+            <label>Select site <span class="text-danger">*</span></label>
+          </div>
+          <div class="col">
+            <%= ff.select :site, ['CHUK', 'NIRDA', 'NEC', 'MINIJUST', 'COMPASSION', 'RALC'] %>
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col-md-4 text-end">
+            <label>Start time <span class="text-danger">*</span></label>
           </div>
           <div class="col">
             <%= ff.time_field :from %>
@@ -31,7 +39,7 @@
         </div>
         <div class="row mb-4">
           <div class="col-md-4 text-end">
-            <label>Finish time</label>
+            <label>Finish time <span class="text-danger">*</span></label>
           </div>
           <div class="col">
             <%= ff.time_field :to %>
@@ -39,11 +47,11 @@
         </div>
         <div class="row mb-4">
           <div class="col-md-4 text-end">
-            <label> Activity</label><br>
+            <label> Activity <span class="text-danger">*</span></label><br>
             <small class="text-secondary">Write in what you were doing during the time you stated above</small>
           </div>
           <div class="col">
-            <%= ff.text_area :action, size:"30x5", class:"form-control" %>
+            <%= ff.text_area :action, size:"30x3", class:"form-control" %>
           </div>
         </div>
 

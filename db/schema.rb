@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_05_100107) do
+ActiveRecord::Schema.define(version: 2021_03_11_194333) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2021_03_05_100107) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "weekly_report_id", null: false
+    t.string "site"
     t.index ["weekly_report_id"], name: "index_activities_on_weekly_report_id"
   end
 

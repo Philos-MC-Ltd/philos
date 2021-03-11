@@ -53,7 +53,11 @@
             <td class="text-center border-end "><%= internship.college %></td>
             <td class="text-center border-end "><%= internship.graduation_year %></td>
 
-            <td class="text-center border-end "><%= link_to "View CV", internship.cv %></td>
+            <td class="text-center border-end ">
+              <%= link_to internship.cv do %>
+                <i class="fas fa-download" title="view CV"></i>
+              <% end %>
+            </td>
             <td>
               <%= link_to internship_path(internship, :status => true),method: :patch do %>
                 <i class="fas fa-eye-slash" title="mark as read"></i>
@@ -96,7 +100,11 @@
             <td class="text-center border-end "><%= internship.college %></td>
             <td class="text-center border-end "><%= internship.graduation_year %></td>
 
-            <td class="text-center border-end "><%= link_to "View CV", internship.cv %></td>
+            <td class="text-center border-end ">
+              <%= link_to internship.cv do %>
+                <i class="fas fa-download" title="view CV"></i>
+              <% end %>
+            </td>
             <td>
                 <%= link_to internship_path(internship, :status => false),method: :patch do %>
                   <i class="fas fa-eye" title="mark as unread"></i>

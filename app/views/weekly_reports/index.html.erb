@@ -11,15 +11,29 @@
     <span class="hamb-bottom"></span>
   </button>
   <div class="container pt-5 bg-light h-screen">
-    <p id="notice"><%= notice %></p>
+    <% if notice %>
+    <p id="notice" class="alert alert-info col-md-7 mx-auto text-center my-2"><%= notice %></p>
+    <% end %>
+    <div class="col-md-3 mx-auto pt-4">
+      <%= image_tag('philos logo.png', class:"logo-dash") %>
+    </div>
+    <div class="row">
+      <div class="col">
+        <h1>Weekly Reports</h1>
+      </div>
+      <div class="col text-end">
+        <%= link_to new_weekly_report_path do %>
+          <label class="bg-main-color py-1 px-3 text-white rounded-3 border cursor-pointer"> Add Report</label>
+        <% end %>
+      </div>
+    </div>
 
-    <h1>Weekly Reports</h1>
 
     <table class="table table-striped">
       <thead>
         <tr class="bg-main-color text-white">
           <th>Done at</th>
-          <th>Actions</th>
+          <th>Actions & site</th>
           <th>What you learnt</th>
           <th>Challenge and solution</th>
           <th colspan="3"></th>
@@ -47,14 +61,16 @@
             </td>
             <% weekly_report.activities.each do |activity| %>
                 <td class="d-block ">
-                  (<%= activity.from.to_s(:time) %> - <%= activity.from.to_s(:time) %>) <%= activity.action %>
+                  <%= activity.site %> | <%= activity.from.to_s(:time) %> - <%= activity.from.to_s(:time) %> | <%= activity.action %>
                 </td>
             <% end %>
             <td class=""><%= weekly_report.lesson %></td>
             <td class=""><%= weekly_report.user.first_name %></td>
-            <td><%= link_to 'Show', weekly_report %></td>
-            <td><%= link_to 'Edit', edit_weekly_report_path(weekly_report) %></td>
-            <td><%= link_to 'Destroy', weekly_report, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td>
+              <%= link_to edit_weekly_report_path(weekly_report) do %>
+                <i class="far fa-calendar-plus" title="Add today's activity"></i>
+              <% end %>
+            </td>
 
           </tr>
         <% end %>
@@ -62,8 +78,8 @@
     </table>
     <br>
 
-    <%= link_to 'New Weekly Report', new_weekly_report_path %>
-    
+
+
   </div>
 </div>
 </div>

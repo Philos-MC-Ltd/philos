@@ -28,8 +28,8 @@ class WeeklyReportsController < ApplicationController
     @weekly_report.user_id = current_user.id
     respond_to do |format|
       if @weekly_report.save
-        format.html { redirect_to @weekly_report, notice: "Weekly report was successfully created." }
-        format.json { render :show, status: :created, location: @weekly_report }
+        format.html { redirect_to weekly_reports_path, notice: "Your report was successfully created!" }
+        format.json { render :index, status: :created, location: @weekly_report }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @weekly_report.errors, status: :unprocessable_entity }
@@ -41,8 +41,8 @@ class WeeklyReportsController < ApplicationController
   def update
     respond_to do |format|
       if @weekly_report.update(weekly_report_params)
-        format.html { redirect_to @weekly_report, notice: "Weekly report was successfully updated." }
-        format.json { render :show, status: :ok, location: @weekly_report }
+        format.html { redirect_to weekly_reports_path, notice: "Weekly report was successfully updated." }
+        format.json { render :index, status: :ok, location: @weekly_report }
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @weekly_report.errors, status: :unprocessable_entity }
@@ -68,8 +68,9 @@ class WeeklyReportsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def weekly_report_params
       params.require(:weekly_report).permit(:done_at, :lesson, :challenge, activities_attributes:[:id,
-                                                                                                 :from,
-                                                                                                 :to,
-                                                                                                 :action])
+                                                                                                  :site,
+                                                                                                  :from,
+                                                                                                  :to,
+                                                                                                  :action])
     end
 end

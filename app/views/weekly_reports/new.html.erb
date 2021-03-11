@@ -16,16 +16,14 @@
           <%= image_tag('philos logo.png', class:"logo-dash") %>
         </div>
           <div class="col text-end">
-            <h1>New Weekly Report</h1>
+            <h1 class="text-main-color">New Weekly Report</h1>
           </div>
       </div>
       <div class="col-md-10 mx-auto py-4">
         <%= render 'form', weekly_report: @weekly_report %>
       </div>
 
-
-      <%= link_to 'Back', weekly_reports_path %>
-
     </div>
+    <%= render 'components/footer' %>
   </div>
 </div>
