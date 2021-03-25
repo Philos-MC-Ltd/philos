@@ -1,6 +1,6 @@
 class InternshipsController < ApplicationController
   before_action :set_internship, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, except: [:confirm]
+  before_action :authenticate_user!, except: %i[confirm new]
   # GET /internships or /internships.json
   def index
     @read_internships = Internship.where(status: true)

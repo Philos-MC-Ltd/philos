@@ -1,6 +1,6 @@
 class WeeklyReportsController < ApplicationController
   before_action :set_weekly_report, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!, only: %i[ create update destroy ]
+  before_action :authenticate_user!
   # GET /weekly_reports or /weekly_reports.json
   def index
     @weekly_reports = WeeklyReport.all

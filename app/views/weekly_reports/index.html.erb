@@ -21,7 +21,7 @@
       <div class="col">
         <h1>Weekly Reports</h1>
       </div>
-      <div class="col text-end">
+      <div class="col text-end align-items-center">
         <%= link_to new_weekly_report_path do %>
           <label class="bg-main-color py-1 px-3 text-white rounded-3 border cursor-pointer"> Add Report</label>
         <% end %>
@@ -42,7 +42,6 @@
 
       <tbody>
         <% @weekly_reports.each do |weekly_report| %>
-
           <tr>
             <td class="">
               <%= weekly_report.done_at %>

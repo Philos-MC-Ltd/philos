@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  department: MyString
+  time: 2021-03-15 14:50:17
+  problem: MyText
+  followup: MyString
+
+two:
+  department: MyString
+  time: 2021-03-15 14:50:17
+  problem: MyText
+  followup: MyString

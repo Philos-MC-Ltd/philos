@@ -1,0 +1,64 @@
+<div id="wrapper">
+  <div class="overlay">
+
+  </div>
+  <%= render "components/sidebar" %>
+  <div id="page-content-wrapper">
+    <div class="position-fixed top-0 w-100">
+      <%= render "components/navbar" %>
+    </div>
+    <button type="button" class="hamburger animated fadeInLeft is-closed" data-toggle="offcanvas">
+      <span class="hamb-top"></span>
+      <span class="hamb-middle"></span>
+      <span class="hamb-bottom"></span>
+    </button>
+  </div>
+  <div class="container h-screen pt-5">
+    <% if notice %>
+    <p id="notice" class="alert alert-info col-md-7 mx-auto text-center my-2"><%= notice %></p>
+    <% end %>
+    <div class="py-4 pt-5 row">
+      <div class="col">
+        <%= image_tag('philos logo.png', class:"logo-dash") %>
+      </div>
+        <div class="col align-items-center">
+          <h3 class="text-end">Technical support</h3>
+        </div>
+    </div>
+
+    <table class="table">
+      <thead class="bg-main-color text-white">
+        <tr>
+          <th>Department</th>
+          <th>Service</th>
+          <th>Caller Phone</th>
+          <th>Time</th>
+          <th>Problem</th>
+          <th>Followup</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @supports.each do |support| %>
+          <tr>
+            <td><%= support.department %></td>
+            <td><%= support.service %></td>
+            <td><%= support.caller %></td>
+            <td><%= support.time.to_s(:time) %></td>
+            <td><%= support.problem %></td>
+            <td><%= support.followup %></td>
+            <td><%= link_to 'Show', support %></td>
+            <td><%= link_to 'Edit', edit_support_path(support) %></td>
+            <td><%= link_to 'Destroy', support, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+    <%= link_to 'New Support', new_support_path %>
+
+  </div>
+</div>

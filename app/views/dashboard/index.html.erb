@@ -14,6 +14,9 @@
       <span class="hamb-bottom"></span>
     </button>
     <div class="container bg-green-light shadow pt-5 ">
+      <% if notice %>
+      <p id="notice" class="alert alert-info col-md-7 mx-auto text-center my-2"><%= notice %></p>
+      <% end %>
       <div class="py-4 pt-5 border-bottom border-secondary row">
         <div class="col">
           <%= image_tag('philos logo.png', class:"logo-dash") %>
@@ -82,9 +85,11 @@
             </div>
           </div>
           <div class="card mb-4">
-            <%= image_tag('personal.webp', class:"card-img-top") %>
+            <%= link_to supports_path do %>
+              <%= image_tag('personal.webp', class:"card-img-top") %>
+            <% end %>
             <div class="card-body">
-              <h5 class="card-title">Daily reports</h5>
+              <h5 class="card-title">Daily Supports</h5>
 
             </div>
           </div>
