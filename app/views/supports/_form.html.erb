@@ -1,6 +1,6 @@
 <%= form_with(model: support, local: true) do |form| %>
   <% if support.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation alert alert-danger">
       <h2><%= pluralize(support.errors.count, "error") %> prohibited this support from being saved:</h2>
 
       <ul>
@@ -10,36 +10,69 @@
       </ul>
     </div>
   <% end %>
+  <div class="row mb-4 text-main-color">
+    <div class="col-md-4 text-end ">
+      <%= form.label :department %>
+    </div>
+    <div class="col">
+      <%= form.text_field :department, class:"form-control text-main-color", placeholder:"Enter The Department name" %>
+    </div>
 
-  <div class="field">
-    <%= form.label :department %>
-    <%= form.text_field :department %>
+
   </div>
-  <div class="field">
-    <%= form.label :service %>
-    <%= form.text_field :service %>
+  <div class="row mb-4 text-main-color">
+    <div class="col-md-4 text-end ">
+      <%= form.label :service %>
+    </div>
+    <div class="col">
+      <%= form.text_field :service, class:"form-control text-main-color", placeholder:"Caller's office or name" %>
+    </div>
+
+
   </div>
-  <div class="field">
-    <%= form.label :caller, "Caller Phone number" %>
-    <%= form.text_field :caller %>
+  <div class="row mb-4 text-main-color">
+    <div class="col-md-4 text-end ">
+      <%= form.label :caller, "Caller Phone number" %>
+    </div>
+    <div class="col">
+      <%= form.text_field :caller, class:"form-control text-main-color", maxlength: 13, placeholder:"+2507xxxxxxxx" %>
+    </div>
+
+
   </div>
 
-  <div class="field">
-    <%= form.label :time %>
-    <%= form.time_select :time %>
+  <div class="row mb-4 text-main-color">
+    <div class="col-md-4 text-end ">
+      <%= form.label :time, "When did you recceive the call?" %>
+    </div>
+    <div class="col">
+      <%= form.time_select :time, class:"form-control text-main-color" %>
+    </div>
+
+
   </div>
 
-  <div class="field">
-    <%= form.label :problem %>
-    <%= form.text_area :problem %>
+  <div class="row mb-4 text-main-color">
+    <div class="col-md-4 text-end ">
+      <%= form.label :problem %>
+    </div>
+    <div class="col">
+      <%= form.text_area :problem, class:"form-control text-main-color", placeholder:"explain what was the problem" %>
+    </div>
+
+
   </div>
 
-  <div class="field">
-    <%= form.label :followup %>
-    <%= form.text_field :followup %>
+  <div class="row mb-4 text-main-color">
+    <div class="col-md-4 text-end ">
+      <%= form.label :followup %>
+    </div>
+    <div class="col select">
+      <%= form.select :followup, ['Solved', 'Pending' ], class:"form-control w-100 text-main-color" %>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions text-center">
+    <%= form.submit class:"bg-main-color rounded-pill text-white py-1 px-3 border-0" %>
   </div>
 <% end %>

@@ -23,11 +23,11 @@ class SupportsController < ApplicationController
   # POST /supports or /supports.json
   def create
     @support = Support.new(support_params)
-
+    @support.user_id = current_user.id
     respond_to do |format|
       if @support.save
-        format.html { redirect_to @support, notice: "Support was successfully created." }
-        format.json { render :show, status: :created, location: @support }
+        format.html { redirect_to supports_path, notice: "Support was successfully created." }
+        format.json { render :index, status: :created, location: @support }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @support.errors, status: :unprocessable_entity }
@@ -39,8 +39,8 @@ class SupportsController < ApplicationController
   def update
     respond_to do |format|
       if @support.update(support_params)
-        format.html { redirect_to @support, notice: "Support was successfully updated." }
-        format.json { render :show, status: :ok, location: @support }
+        format.html { redirect_to supports_path, notice: "Support was successfully updated." }
+        format.json { render :index, status: :ok, location: @support }
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @support.errors, status: :unprocessable_entity }
@@ -65,6 +65,6 @@ class SupportsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def support_params
-      params.require(:support).permit(:department, :time, :problem, :followup)
+      params.require(:support).permit(:department, :service, :caller, :time, :problem, :followup)
     end
 end

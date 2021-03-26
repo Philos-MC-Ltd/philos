@@ -21,8 +21,9 @@
       <div class="col">
         <%= image_tag('philos logo.png', class:"logo-dash") %>
       </div>
-        <div class="col align-items-center">
+        <div class="col align-items-center text-end">
           <h3 class="text-end">Technical support</h3>
+          <%= link_to 'New Support', new_support_path, class:"text-decoration-none text-white bg-main-color py-1 px-3 rounded"  %>
         </div>
     </div>
 
@@ -48,17 +49,20 @@
             <td><%= support.time.to_s(:time) %></td>
             <td><%= support.problem %></td>
             <td><%= support.followup %></td>
-            <td><%= link_to 'Show', support %></td>
-            <td><%= link_to 'Edit', edit_support_path(support) %></td>
-            <td><%= link_to 'Destroy', support, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td>
+              <%= link_to edit_support_path(support) do %>
+                <i class="fas fa-pen-alt text-main-color" title="Edit"></i>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to support, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                <i class="fas fa-calendar-times text-danger" title="Delete"></i>
+              <% end %>
+            </td>
           </tr>
         <% end %>
       </tbody>
     </table>
-
-    <br>
-
-    <%= link_to 'New Support', new_support_path %>
 
   </div>
 </div>
