@@ -4,10 +4,20 @@ class WeeklyReportsController < ApplicationController
   # GET /weekly_reports or /weekly_reports.json
   def index
     @weekly_reports = WeeklyReport.all
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = WeeklyReportPdf.new(@weekly_reports)
+        send_data pdf.render, filename: "personal report.pdf",
+                              type: "application/pdf",
+                              disposition: "inline"
+      end
+    end
   end
 
   # GET /weekly_reports/1 or /weekly_reports/1.json
   def show
+
   end
 
 
