@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   resources :supports
-  resources :weekly_reports
+  resources :weekly_reports do
+    collection do
+    match 'search' => 'weekly_reports#search', via: [:get, :post], as: :search
+  end
+  end
   resources :internships do
     get "confirm"
   end

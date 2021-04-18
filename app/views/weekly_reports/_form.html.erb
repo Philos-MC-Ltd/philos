@@ -34,7 +34,7 @@
             <label>Start time <span class="text-danger">*</span></label>
           </div>
           <div class="col">
-            <%= ff.time_field :from %>
+            <%= ff.time_field :from, value: "%H:%M", min: 'hh:mm:ss', max: 'hh:mm:ss' %>
           </div>
         </div>
         <div class="row mb-4">
@@ -42,7 +42,7 @@
             <label>Finish time <span class="text-danger">*</span></label>
           </div>
           <div class="col">
-            <%= ff.time_field :to %>
+            <%= ff.time_field :to, value: "%H:%M", min: 'hh:mm:ss', max: 'hh:mm:ss' %>
           </div>
         </div>
         <div class="row mb-4">
