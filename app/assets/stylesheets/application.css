@@ -73,6 +73,9 @@
 .bg-footer{
   background-color: #181e29;
 }
+.bg-main-light{
+  background-color: #cad7fc;
+}
 .text-main-color{
   color: #2c4c61;
 }
@@ -125,6 +128,7 @@
 .space-2{
   letter-spacing: 5px;
 }
+
 li{
   list-style: none;
 }
@@ -151,3 +155,18 @@ footer li a:hover{
 @keyframes size-down {
     100% {transform: scale(0.7, 0.7);}
 }
+
+
+/* date dropdown styling */
+#q_done_at_gteq_1i,
+#q_done_at_gteq_2i,
+#q_done_at_gteq_3i,
+#q_done_at_lteq_1i,
+#q_done_at_lteq_2i,
+#q_done_at_lteq_3i{
+  border-radius: 5px;
+  height: 33px;
+  border: 1px solid #2c4c61;
+  background-color: #f7f7d2;
+}
+/* end od date dropdown styling */
