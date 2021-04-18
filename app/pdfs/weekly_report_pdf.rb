@@ -2,7 +2,7 @@
 class WeeklyReportPdf < Prawn::Document
   def initialize(weekly_reports)
     super(top_margin: 90)
-    @weekly_reports = WeeklyReport.all
+    @weekly_reports = weekly_reports
     header
     line_items
   end

@@ -3,7 +3,13 @@ class WeeklyReportsController < ApplicationController
   before_action :authenticate_user!
   # GET /weekly_reports or /weekly_reports.json
   def index
-    @weekly_reports = WeeklyReport.all
+    @search = WeeklyReport.ransack(params[:q])
+    if params[:q]
+      @weekly_reports = @search.result.includes(:user)
+    else
+      @weekly_reports = WeeklyReport.all
+
+    end
     respond_to do |format|
       format.html
       format.pdf do
@@ -14,7 +20,10 @@ class WeeklyReportsController < ApplicationController
       end
     end
   end
-
+  def search
+    index
+    render :index
+  end
   # GET /weekly_reports/1 or /weekly_reports/1.json
   def show
 

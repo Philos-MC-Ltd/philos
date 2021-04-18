@@ -27,7 +27,30 @@
         <% end %>
       </div>
     </div>
+    <div class="row">
+      <%= search_form_for @search, url:search_weekly_reports_path do |form| %>
+      <div class="rounded p-2 bg-white shadow container mx-auto my-2 text-center" id="datepicker">
+        <h4 class="space-2 mb-3 text-main-color">Search Employees weekly report</h4>
+        <div class="input-daterange row ">
+          <div class="form-group col">
+            <%= form.search_field :user_first_name_cont, class:"form-control " %>
+          </div>
+          <div class="form-group col text-start p-0 bg-info">
+            <small>From date</small><br>
+            <%= form.date_select :done_at_gteq, class:"form-control  "%>
+          </div>
+          <div class="form-group col text-start pt-0">
+            <small>To date</small><br>
+            <%= form.date_select :done_at_lteq, class:"form-control  "%>
+          </div>
+          <div class="form-group col">
+            <%= form.submit %>
+          </div>
+        </div>
 
+      </div>
+      <% end %>
+    </div>
 
     <table class="table table-striped">
       <thead>
@@ -76,7 +99,7 @@
       </tbody>
     </table>
     <br>
-    <%= link_to "Print Report", weekly_reports_path(format: "pdf"), target: "_blank" %>
+    <%= link_to "Print Report", weekly_reports_path(request.params.merge(format: 'pdf')), target: "_blank" %>
   </div>
 </div>
 </div>
