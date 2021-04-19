@@ -16,12 +16,21 @@
  h1, h2, h3, h4, h5{
    font-weight: lighter;
  }
+ .no-decoration a{
+   text-decoration: none;
+ }
  .select select{
    width: 100%;
    height: 35px;
    border: 1px solid #ced4da;
    background-color: white;
    border-radius: 5px;
+ }
+ #file-upload-button{
+   background-color: white;
+   border: 1px solid #283c4d;
+   border-radius: 5px;
+   color: white;
  }
  .bg-green-light{
    background-color: #d5ded9;
