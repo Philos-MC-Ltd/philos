@@ -1,0 +1,52 @@
+<div id="wrapper">
+  <div class="overlay"></div>
+  <%= render "components/sidebar" %>
+  <div id="page-content-wrapper">
+    <div class="position-fixed w-100 z-index-1">
+      <%= render "components/navbar" %>
+    </div>
+    <button type="button" class="hamburger animated fadeInLeft is-closed" data-toggle="offcanvas">
+      <span class="hamb-top"></span>
+      <span class="hamb-middle"></span>
+      <span class="hamb-bottom"></span>
+    </button>
+    <div class="container pt-5">
+      <div class="pt-3">
+        <% if notice %>
+        <p id="notice" class="alert alert-info col-md-7 mx-auto text-center my-2"><%= notice %></p>
+        <% end %>
+        <h1 class="text-center text-main-color">Services</h1>
+        <% @services.each do |service| %>
+
+        <div class="row g-0 mt-4">
+
+            <div class="col-sm-6 col-md-4 px-2">
+              <%= link_to service do %>
+                <% if service.image.present? %>
+                  <%= image_tag service.image.url, class:"w-100" %>
+                <%else%>
+                  <%= image_tag('pc repair.jpg', class:"w-100") %>
+                <% end %>
+              <% end %>
+            </div>
+
+          <div class="col-sm-6 col-md-8 px-2 no-decoration">
+            <%= link_to service do %>
+              <h4 class="cursor-pointer text-decoration-none text-main-color"><%= service.title %></h4>
+            <% end %>
+
+            <p><%= service.content %></p>
+            <%= link_to 'Show', service %>
+            <%= link_to 'Edit', edit_service_path(service) %>
+            <%= link_to 'Destroy', service, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        </div>
+        <% end %>
+        <%= link_to 'New Service', new_service_path %>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
